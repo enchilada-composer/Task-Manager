@@ -1,34 +1,27 @@
 # Java Task Manager
 
-A command-line task management system written in Java with dunst notifications.
+A simple command-line task management system written in Java.
 
 ## Features
 
 - Add tasks with descriptions and priority levels
 - View all tasks with their status
-- Mark tasks as complete with automatic notification updates
+- Mark tasks as complete
 - Delete tasks
-- Persistent notifications using dunst
 - Simple text-based interface
 
 ## Requirements
 
 - Java 11 or higher
-- Dunst notification daemon (https://dunst-project.org/)
 
 ## How to Run
 
-1. Make sure dunst is running:
-   ```bash
-   dunst &
-   ```
-
-2. Compile the program:
+1. Compile the program:
    ```bash
    javac TaskManager.java
    ```
 
-3. Run the program:
+2. Run the program:
    ```bash
    java TaskManager
    ```

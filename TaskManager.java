@@ -123,32 +123,13 @@ public class TaskManager {
     }
 
     private static void updateNotifications() {
-        try {
-            // Kill existing dunst instance
-            Runtime.getRuntime().exec(new String[]{"killall", "dunst"});
-            Thread.sleep(100); // Give it a moment to die
-            
-            // Start a new dunst instance
-            Runtime.getRuntime().exec(new String[]{"dunst"});
-            Thread.sleep(500); // Give dunst time to start
-            
-            // Send notifications for each task
-            for (int i = 0; i < tasks.size(); i++) {
-                Task task = tasks.get(i);
-                String message = String.format("%d. %s\nPriority: %d\nStatus: %s",
-                    i + 1, task.getDescription(), task.getPriority(),
-                    task.isCompleted() ? "Completed" : "Pending");
-                
-                Runtime.getRuntime().exec(new String[]{
-                    "dunstify",
-                    "-t", "0", // Persistent notification
-                    "-u", task.isCompleted() ? "normal" : "critical", // Urgency level
-                    "Task Manager",
-                    message
-                }, null, null);
-            }
-        } catch (Exception e) {
-            System.out.println("Error updating notifications: " + e.getMessage());
+        // Just print to console
+        System.out.println("\nTasks:");
+        for (int i = 0; i < tasks.size(); i++) {
+            Task task = tasks.get(i);
+            System.out.printf("%d. %s (Priority: %d) - %s\n", 
+                i + 1, task.getDescription(), task.getPriority(), 
+                task.isCompleted() ? "Completed" : "Pending");
         }
     }
 
