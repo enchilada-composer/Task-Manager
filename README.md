@@ -35,9 +35,10 @@ The program provides a menu with the following options:
 4. Delete Task - Remove a task from the list
 5. Exit - Quit the program
 
-## Example
+## Examples
 
-```
+### Adding a Task
+```bash
 Menu:
 1. Add Task
 2. View Tasks
@@ -50,9 +51,70 @@ Enter task description: Buy groceries
 Enter priority (1-5): 3
 Task added successfully!
 ```
-5. Exit - Close the program
+
+### Viewing Tasks
+```bash
+Menu:
+1. Add Task
+2. View Tasks
+3. Mark Task as Complete
+4. Delete Task
+5. Exit
+Choose an option: 2
+
+Tasks:
+1. Buy groceries (Priority: 3) - Pending
+```
+
+### Marking a Task as Complete
+```bash
+Menu:
+1. Add Task
+2. View Tasks
+3. Mark Task as Complete
+4. Delete Task
+5. Exit
+Choose an option: 3
+
+Enter task number to mark as complete: 1
+Task marked as complete!
+
+Tasks:
+1. Buy groceries (Priority: 3) - Completed
+```
+
+### Deleting a Task
+```bash
+Menu:
+1. Add Task
+2. View Tasks
+3. Mark Task as Complete
+4. Delete Task
+5. Exit
+Choose an option: 4
+
+Enter task number to delete: 1
+Task deleted successfully!
+
+Tasks:
+No tasks found.
+```
+
+### Invalid Input Handling
+```bash
+Menu:
+1. Add Task
+2. View Tasks
+3. Mark Task as Complete
+4. Delete Task
+5. Exit
+Choose an option: 6
+Invalid choice. Please try again.
+
+Choose an option: abc
+Invalid input. Please enter a number between 1 and 5.
+```
 
 ## Requirements
 
-- Java JDK 8 or higher
-- Basic understanding of Java programming
+- Java 11 or higher
