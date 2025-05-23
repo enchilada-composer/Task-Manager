@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.io.Console;
-import jdk.internal.org.jline.reader.UserInterruptException;
 
 public class TaskManager {
     private static List<Task> tasks = new ArrayList<>();
@@ -55,13 +54,16 @@ public class TaskManager {
                     default:
                         System.out.println("Invalid choice. Please try again.");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number between 1 and 5.");
-            } catch (InterruptedException e) {
-                System.out.println("\nGoodbye!");
-                return;
             } catch (Exception e) {
-                throw e; // Re-throw any other unexpected exceptions
+                if (e.getMessage() != null && e.getMessage().contains("User interrupt")) {
+                    System.out.println("\nGoodbye!");
+                    return;
+                }
+                if (e instanceof NumberFormatException) {
+                    System.out.println("Invalid input. Please enter a number between 1 and 5.");
+                } else {
+                    System.err.println("Error: " + e.getMessage());
+                }
             }
         }
     }
