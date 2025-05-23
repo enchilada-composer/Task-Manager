@@ -1,9 +1,11 @@
 *.class
 *.jar
-*.class
 .idea/
 .vscode/
 *.swp
 *.swo
 *.iml
 *.log
+*.class
+*.class
+*.class
