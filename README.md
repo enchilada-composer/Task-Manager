@@ -115,6 +115,3 @@ Choose an option: abc
 Invalid input. Please enter a number between 1 and 5.
 ```
 
-## Requirements
-
-- Java 11 or higher
